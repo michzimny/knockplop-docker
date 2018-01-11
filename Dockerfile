@@ -7,8 +7,8 @@ RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/conf
     && chmod +x /bin/confd
 
 ENV KNOCKPLOP_GIT_REPO=https://github.com/so010/knockplop.git
-# it selects branch develop as of 15th Nov 2017
-ENV KNOCKPLOP_GIT_REF=10fb311b628e9366d2aea7c68710e5639ad5a799
+# it selects branch develop-fix-rest-api as of 11th Jan 2018
+ENV KNOCKPLOP_GIT_REF=de7233c0b83171d7036c962d119ef7d5c1547d3d
 
 WORKDIR /opt/knockplop
 
