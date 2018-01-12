@@ -6,9 +6,9 @@ RUN npm install -g bower \
 RUN wget https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 -O /bin/confd \
     && chmod +x /bin/confd
 
-ENV KNOCKPLOP_GIT_REPO=https://github.com/so010/knockplop.git
-# it selects branch develop-fix-rest-api as of 11th Jan 2018
-ENV KNOCKPLOP_GIT_REF=de7233c0b83171d7036c962d119ef7d5c1547d3d
+ENV KNOCKPLOP_GIT_REPO=https://github.com/up2university/knockplop.git
+# it selects branch develop as of 15th Nov 2017
+ENV KNOCKPLOP_GIT_REF=d30f3532a45769e23bf697c50d876c8cdd0ff93d
 
 WORKDIR /opt/knockplop
 
