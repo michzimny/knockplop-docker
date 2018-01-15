@@ -3,6 +3,8 @@ Dockerized Knockplop - meeting webservice (based on WebRTC technology
 
 This project dockerizes https://github.com/so010/knockplop/
 
+This Docker image is automatically built at https://hub.docker.com/r/michzimny/knockplop/
+
 ## Run
 
 By default the container exposes HTTPS with self-signed certificates, and tries to use [the TURN service from GÉANT](https://turn.geant.org/). The only parameter to provide is a REST API token for the TURN service.
