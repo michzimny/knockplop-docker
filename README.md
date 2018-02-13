@@ -35,7 +35,7 @@ The following environmental variables need to be set to indicate PEM paths of ot
 
 * SSL_KEY - the certificate private key
 * SSL_CERT - the actual certificate
-* SSL_CA - the certificate's chain
+* SSL_CA - the certificate's chain (optionally)
 
 For instance using [certbot-auto](https://certbot.eff.org/docs/install.html#certbot-auto), assuming the certbot output directory is at ./certs, one can provide the directory as a Docker volume and set the variables in env-file:
 
