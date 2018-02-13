@@ -25,13 +25,11 @@ The image can be built with for instance:
 docker build -t michzimny/knockplop .
 ```
 
-## Customization
+## TLS certificates
 
-For production usage, one might want to adjust TLS (HTTPS) certificates and TURN connection.
+For production usage, one might want to adjust TLS (HTTPS) certificates.
 
-### TLS certificates
-
-The following environmental variables need to be set to indicate PEM paths of other certificate:
+The following environmental variables need to be set to indicate PEM paths of a certificate:
 
 * SSL_KEY - the certificate private key
 * SSL_CERT - the actual certificate
@@ -52,11 +50,18 @@ docker run -d \
 with "env" file containing:
 
 ```
+REST_API_KEY=XXXYYYZZZ
 SSL_KEY=/etc/certs/live/example.com/privkey.pem
 SSL_CERT=/etc/certs/live/example.com/cert.pem
 SSL_CA=/etc/certs/live/example.com/chain.pem
 ```
 
-### TURN connection
+## TURN connection
 
-TODO
+By default, GÉANT TURN service is in use. The default API URL is the following one, with the value of $REST_API_KEY at its end:
+
+```
+https://api.turn.geant.org/turn?uri_schema=turn&transport=tcp&ip_ver=ipv4%2Cipv6&servercount=1&api_key=XXXYYYZZZ
+```
+
+The URL can be adjusted by setting environmental variable REST_API_URL. Its value must be a valid JS expression. Please study [entrypoint.sh](entrypoint.sh) for the right format.
