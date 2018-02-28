@@ -58,14 +58,10 @@ SSL_CA=/etc/certs/live/example.com/chain.pem
 
 ## TURN connection
 
-By default, GÉANT TURN service is in use. The default API URL is the following one, with the value of $REST_API_KEY at its end:
+By default, GÉANT TURN service is in use. The default API URL is given in [entrypoint.sh](entrypoint.sh), and at its end the value of $REST_API_KEY is added.
+
+The URL can be adjusted by setting environmental variable REST_API_URL. Its value must be a valid JS expression, for instance:
 
 ```
-https://api.turn.geant.org/turn?uri_schema=turn&transport=tcp&ip_ver=ipv4%2Cipv6&servercount=1&api_key=XXXYYYZZZ
-```
-
-The URL can be adjusted by setting environmental variable REST_API_URL. Its value must be a valid JS expression. The default value is:
-
-```
-REST_API_URI='https://api.turn.geant.org/turn?uri_schema=turn&transport=tcp&ip_ver=ipv4%2Cipv6&servercount=1&api_key='+config.REST_API_KEY
+REST_API_URI='https://turn.example.com/something?api_key='+config.REST_API_KEY
 ```
