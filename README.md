@@ -64,4 +64,8 @@ By default, GÉANT TURN service is in use. The default API URL is the following 
 https://api.turn.geant.org/turn?uri_schema=turn&transport=tcp&ip_ver=ipv4%2Cipv6&servercount=1&api_key=XXXYYYZZZ
 ```
 
-The URL can be adjusted by setting environmental variable REST_API_URL. Its value must be a valid JS expression. Please study [entrypoint.sh](entrypoint.sh) for the right format.
+The URL can be adjusted by setting environmental variable REST_API_URL. Its value must be a valid JS expression. The default value is:
+
+```
+REST_API_URI='https://api.turn.geant.org/turn?uri_schema=turn&transport=tcp&ip_ver=ipv4%2Cipv6&servercount=1&api_key='+config.REST_API_KEY
+```
