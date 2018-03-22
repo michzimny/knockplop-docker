@@ -56,6 +56,8 @@ SSL_CERT=/etc/certs/live/example.com/cert.pem
 SSL_CA=/etc/certs/live/example.com/chain.pem
 ```
 
+Alternatively, one can use docker-compose.yml and simply call `docker-compose up -d`.
+
 ## TURN connection
 
 By default, GÉANT TURN service is in use. The default API URL is given in [entrypoint.sh](entrypoint.sh), and at its end the value of $REST_API_KEY is added.
